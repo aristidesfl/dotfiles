@@ -17,8 +17,8 @@ if status --is-login
     end
 
     # add postgres.app to path if installed
-    if [ -d /Applications/Postgres.app/Contents/MacOS/bin ]
-        set -x PATH $PATH "/Applications/Postgres.app/Contents/MacOS/bin"
+    if [ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]
+        set -x PATH $PATH "/Applications/Postgres.app/Contents/Versions/latest/bin"
     end
 end
 
