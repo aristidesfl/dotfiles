@@ -54,4 +54,12 @@ Backup[ ]of[ ]*.numbers/
 # python
 *.pyc
 .virtualenv/
+
+# log files
 *.log
+
+# javascript stuff
+node_modules/
+bower_components/
+semantic/
+
