@@ -52,6 +52,11 @@ if status --is-interactive
 
     set -x WORKON_HOME $HOME/.virtualenvs
 
+    # rbenv
+    if type -q rbenv
+        . (rbenv init -|psub)
+    end
+
     # ----- git aliases -----
     alias g "git"
     alias s "git status"
