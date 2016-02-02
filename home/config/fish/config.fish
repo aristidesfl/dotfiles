@@ -8,18 +8,21 @@ if status --is-login
         set -x PATH $PATH "$HOME/Dropbox/bin"
     end
 
-    # add coreutils gnubin if installed
-    if type brew >/dev/null 2>&1
-        set gnubin (brew --prefix coreutils)/libexec/gnubin
-        if [ -d $gnubin ]
-            set -x PATH $gnubin $PATH
-        end
-    end
-
     # add postgres.app to path if installed
     if [ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]
         set -x PATH $PATH "/Applications/Postgres.app/Contents/Versions/latest/bin"
     end
+
+    # add coreutils gnubin if installed
+    if type -q brew
+        set gnubin (brew --prefix coreutils)/libexec/gnubin
+        set gnuman (brew --prefix coreutils)/libexec/gnuman
+        if [ -d $gnubin ]
+            set -x PATH $gnubin $PATH
+            set -x MANPATH $gnuman $MANPATH
+        end
+    end
+
 end
 
 if status --is-interactive
