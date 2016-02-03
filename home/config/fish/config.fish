@@ -23,10 +23,6 @@ if status --is-login
         end
     end
 
-end
-
-if status --is-interactive
-
     # set e to sublime if available, otherwise use nano
     if [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]
         set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
@@ -34,26 +30,23 @@ if status --is-interactive
     else
         set -x EDITOR "nano"
     end
-    alias e $EDITOR
+
+    # improve ls colors
+    set -x LSCOLORS dxfxcxdxbxegedabagacad
+
+    #colors
+    set -x fish_color_user F92672
+    set -x fish_color_host FD971F
+    set -x fish_color_cwd A6E22E
+
+end
+
+if status --is-interactive
 
     # set launchbar alias if launchbar is installed
     if [ -e '/Applications/Launchbar.app' ]
         alias launchbar "open -a launchbar"
     end
-
-    # improve ls colors
-    set -x LSCOLORS dxfxcxdxbxegedabagacad
-
-    # make intermediary directories
-    alias mkdirs "mkdir -p"
-
-    #virtualenvwrapper
-    if [ -f ~/.config/fish/virtualfish/virtual.fish ]
-        . ~/.config/fish/virtualfish/virtual.fish
-        . ~/.config/fish/virtualfish/auto_activation.fish
-    end
-
-    set -x WORKON_HOME $HOME/.virtualenvs
 
     # rbenv
     if type -q rbenv
@@ -91,7 +84,8 @@ if status --is-interactive
     # ----- other aliases -----
     alias ll "ls -Alrth"
     alias venv "vex --path .virtualenv"
-
+    alias e $EDITOR
+    alias mkdirs "mkdir -p"  # make intermediary directories
     # function auto_activation --on-variable PWD
     #     if test -d ".virtualenv"
     #         if not set -q VIRTUAL_ENV
@@ -111,12 +105,6 @@ if status --is-interactive
     # end
     # # in case the shell is started in a directory which contains a virtualenv
     # auto_activation
-
-
-    #colors
-    set -x fish_color_user F92672
-    set -x fish_color_host FD971F
-    set -x fish_color_cwd A6E22E
 
     # set tab width to 3 spaces instead of 8
     tabs -3
