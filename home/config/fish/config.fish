@@ -34,7 +34,12 @@ if status --is-login
     # improve ls colors
     # set -x LSCOLORS dxfxcxdxbxegedabagacad
 
+
     #colors
+    set -x fish_color_command green
+    set -x fish_color_param normal
+    set -x fish_color_quote E6E364
+
 
 end
 
