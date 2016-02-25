@@ -19,7 +19,6 @@ if status --is-login
         set gnuman (brew --prefix coreutils)/libexec/gnuman
         if [ -d $gnubin ]
             set -x PATH $gnubin $PATH
-            set -x MANPATH $gnuman $MANPATH
         end
     end
 
