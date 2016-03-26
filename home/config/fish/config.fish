@@ -30,6 +30,9 @@ if status --is-login
         set -x EDITOR "nano"
     end
 
+    # disable pager
+    set -x PAGER cat
+    set -x MANPAGER cat
     # improve ls colors
     # set -x LSCOLORS dxfxcxdxbxegedabagacad
 
