@@ -1,3 +1,0 @@
-[submodule "home/config/fish/virtualfish"]
-	path = home/config/fish/virtualfish
-	url = https://github.com/adambrenecki/virtualfish.git
