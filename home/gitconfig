@@ -48,3 +48,5 @@
 	find = log --diff-filter=A
 [include]
 	path = ~/.gitlocal
+[push]
+	default = simple
