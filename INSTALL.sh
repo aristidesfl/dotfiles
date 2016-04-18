@@ -51,7 +51,7 @@ hash git 2>/dev/null && {
         [ "$REPLY" ] && git config -f "$gitlocal" user.email "$REPLY"
         # make git wait for sublime text otherwise commit doesn't work
         read -p "Do you want to edit commit messages using Sublime Text?(y/n)"
-        [ "$REPLY" == "y" ] && git config -f "$gitlocal" core.editor "subl -w"
+        [ "$REPLY" == "y" ] && git config -f "$gitlocal" core.editor "subl -w -n --command toggle_side_bar"
         # use keychain to retrieve passwords on repositories cloned via https
         [ "`uname`" == "Darwin" ] && git config -f "$gitlocal" credential.helper "osxkeychain"
         echo
