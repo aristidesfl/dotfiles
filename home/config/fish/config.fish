@@ -89,6 +89,7 @@ if status --is-interactive
     alias remote "git remote"
     alias revert "git revert"
     alias fetch "git fetch"
+    alias amend "git commit --amend"
 
     # ----- other aliases -----
     alias ll "ls -Alrth"
