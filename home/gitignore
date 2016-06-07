@@ -63,3 +63,5 @@ node_modules/
 bower_components/
 semantic/
 
+# Rails
+.byebug_history
