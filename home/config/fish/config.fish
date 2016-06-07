@@ -47,6 +47,10 @@ if status --is-login
     set -x fish_color_param normal
     set -x fish_color_quote E6E364
 
+    # rbenv
+    if type -q rbenv
+        . (rbenv init -|psub)
+    end
 
 end
 
@@ -55,11 +59,6 @@ if status --is-interactive
     # set launchbar alias if launchbar is installed
     if [ -e '/Applications/Launchbar.app' ]
         alias launchbar "open -a launchbar"
-    end
-
-    # rbenv
-    if type -q rbenv
-        . (rbenv init -|psub)
     end
 
     # ----- git aliases -----
