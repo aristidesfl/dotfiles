@@ -25,7 +25,7 @@ if status --is-login
     # set e to sublime if available, otherwise use nano
     if [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]
         set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
-        set -x EDITOR "subl -n"
+        set -x EDITOR "subl"
     else
         set -x EDITOR "nano"
     end
