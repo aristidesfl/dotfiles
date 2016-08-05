@@ -51,7 +51,7 @@
 [include]
 	path = ~/.gitlocal
 [push]
-	default = upstream
+	default = current
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
