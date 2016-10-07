@@ -26,6 +26,7 @@ if status --is-login
     if [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]
         set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
         set -x EDITOR "subl"
+        set -x KUBE_EDITOR "subl -w -n --command <toggle_side_bar>d</toggle_side_bar>"
     else
         set -x EDITOR "nano"
     end
