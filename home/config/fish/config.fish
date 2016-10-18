@@ -93,7 +93,7 @@ if status --is-interactive
     alias e $EDITOR
     alias mkdirs "mkdir -p"  # make intermediary directories
     alias hamachi "sudo '/Library/Application Support/LogMeIn Hamachi/bin/hamachid'"
-    alias spaces2tabs "find . -type f -not -path "./.git/*" -not -path "node_modules/*" -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 "$0" > /tmp/e && mv /tmp/e "$0"' {} \;"
+    alias spaces2tabs "find . -type f -not -path \"./.git/*\" -not -path 'node_modules/*' -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 \"$0\" > /tmp/e && mv /tmp/e \"$0\"' {} \;"
     alias k "kubectl"
     alias c "clear"
     # function auto_activation --on-variable PWD
