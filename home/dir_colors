@@ -1,0 +1,2 @@
+LINK 01;35 # symbolic link. (If you set this to 'target' instead of a
+OTHER_WRITABLE 30;42 # dir that is other-writable (o+w) and not sticky

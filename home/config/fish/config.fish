@@ -39,8 +39,8 @@ if status --is-login
     # disable pager
     set -x PAGER cat
     set -x MANPAGER cat
-    # improve ls colors
-    # set -x LSCOLORS dxfxcxdxbxegedabagacad
+    # improve ls colors on osx / bsd
+    set -x LSCOLORS exfxbxdxcxegedxbxgxcac
 
 
     #colors
