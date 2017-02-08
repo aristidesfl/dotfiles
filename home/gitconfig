@@ -68,3 +68,5 @@
 [diff-so-fancy]
 	markEmptyLines = false
 	stripLeadingSymbols = false
+[branch]
+	autosetuprebase = always
