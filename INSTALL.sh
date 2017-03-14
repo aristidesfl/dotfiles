@@ -78,7 +78,7 @@ else
         if hash brew 2>/dev/null; then
             brew update &&
             brew install fishfish &&
-            sudo echo /usr/local/bin/fish >> /etc/shells && sudo chsh -s /usr/local/bin/fish
+            sudo sh -c "echo /usr/local/bin/fish >> /etc/shells" && chsh -s /usr/local/bin/fish
         else
             echo "To install homebrew visit: https://github.com/mxcl/homebrew/wiki/Installation"
             echo "After that you can install fishfish with: brew install fishfish"
