@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-brew update
 brew install coreutils
 brew install diff-so-fancy
 brew install fish
