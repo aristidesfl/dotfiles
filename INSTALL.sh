@@ -71,17 +71,36 @@ hash git 2>/dev/null && {
 
 
 # ------------------------------- install/activate homebrew/fishfish ------------------------------------------
+# install fisherman
+if ! [[ -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
+    echo ""
+    echo "Installing fisherman..."
+    curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs git.io/fisher
+fi
+
+
 if [[ $SHELL = *fish* ]]; then
     echo "For the changes to take effect you need to restart fish"
+    echo "Installing fisherman packages"
+    fisher install
 else
     if [[ `uname` == "Darwin" ]]; then
         if hash brew 2>/dev/null; then
-            brew update &&
-            brew install fishfish &&
-            sudo sh -c "echo /usr/local/bin/fish >> /etc/shells" && chsh -s /usr/local/bin/fish
+            echo ""
+            echo "Installing fish shell..."
+            brew install fish &&
+            echo ""
+            echo "Activating fish..." &&
+            sudo sh -c "echo /usr/local/bin/fish >> /etc/shells" && chsh -s /usr/local/bin/fish &&
+            echo ""
+            echo "Installing fisherman packages..." &&
+            fish --login --command="fisher install"
+            echo ""
+            echo "Entering fish..." &&
+            fish --login
         else
             echo "To install homebrew visit: https://github.com/mxcl/homebrew/wiki/Installation"
-            echo "After that you can install fishfish with: brew install fishfish"
+            echo "After that you can install fish with: brew install fish"
         fi
     else
         echo "To install fishfish visit: http://ridiculousfish.com/shell/beta.html"
