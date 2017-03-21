@@ -31,12 +31,8 @@ if status --is-login
         set -x EDITOR "nano"
     end
 
-    # disable pager
-    set -x PAGER cat
-    set -x MANPAGER cat
     # improve ls colors on osx / bsd
     set -x LSCOLORS exfxbxdxcxegedxbxgxcac
-
 
     #colors
     set -x fish_color_command green
