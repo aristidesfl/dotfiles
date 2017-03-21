@@ -55,6 +55,8 @@ if status --is-interactive
 
     # ----- git aliases -----
     alias g "git"
+    alias s "git status"
+    alias c "git commit"
     alias commit "git commit"
     alias changes "git diff"
     alias branch "git branch"
@@ -77,6 +79,7 @@ if status --is-interactive
     alias revert "git revert"
     alias fetch "git fetch"
     alias amend "git commit --amend"
+    alias git "hub"
 
     # ----- other aliases -----
     alias ll "ls -Alrth"
@@ -86,7 +89,8 @@ if status --is-interactive
     alias hamachi "sudo '/Library/Application Support/LogMeIn Hamachi/bin/hamachid'"
     alias spaces2tabs "find . -type f -not -path \"./.git/*\" -not -path 'node_modules/*' -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 \"$0\" > /tmp/e && mv /tmp/e \"$0\"' {} \;"
     alias k "kubectl"
-    alias c "clear"
+    alias pubkey "cat ~/.ssh/id_rsa.pub | pbcopy"
+
     # function auto_activation --on-variable PWD
     #     if test -d ".virtualenv"
     #         if not set -q VIRTUAL_ENV
