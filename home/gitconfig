@@ -70,3 +70,5 @@
 	stripLeadingSymbols = false
 [branch]
 	autosetuprebase = always
+[pull]
+	rebase = true
