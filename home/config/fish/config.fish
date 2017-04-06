@@ -93,6 +93,7 @@ if status --is-interactive
     alias spaces2tabs "find . -type f -not -path \"./.git/*\" -not -path 'node_modules/*' -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 \"$0\" > /tmp/e && mv /tmp/e \"$0\"' {} \;"
     abbr k "kubectl"
     abbr pubkey "cat ~/.ssh/id_rsa.pub | pbcopy"
+    alias npm-exec "env PATH=(npm bin):(string join ':' -- $PATH)"
 
     # function auto_activation --on-variable PWD
     #     if test -d ".virtualenv"
