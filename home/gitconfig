@@ -43,10 +43,13 @@
 	graph = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	find = log --diff-filter=A
 	report = !git log --author=\"`git config user.name`\" --format='%Cgreen%ci%Creset %s%Creset' --no-merges
+	prune = fetch --prune
+	stash-all = stash save --include-untracked
 [include]
 	path = ~/.gitlocal
 [push]
 	default = current
+	followTags = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
@@ -67,3 +70,5 @@
 	autosetuprebase = always
 [pull]
 	rebase = true
+[status]
+	showUntrackedFiles = all
