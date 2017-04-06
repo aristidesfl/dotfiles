@@ -23,6 +23,7 @@
 	untracked = cyan
 [diff]
  	renames = copy # makes the diff much shorter when moving or copying files
+  tool = icdiff
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
