@@ -14,12 +14,11 @@ if status --is-login
     end
 
     # add coreutils gnubin if installed
-    if type -q brew
-        set gnubin (brew --prefix coreutils)/libexec/gnubin
-        set gnuman (brew --prefix coreutils)/libexec/gnuman
-        if [ -d $gnubin ]
-            set -x PATH $gnubin $PATH
-        end
+    set -l gnubin "/usr/local/opt/coreutils/libexec/gnubin"
+    set -l gnuman "/usr/local/opt/coreutils/libexec/gnuman"
+    if [ -d $gnubin ]
+        set -x PATH $gnubin $PATH
+        set -x MANPATH $gnuman $MANPATH
     end
 
     # set e to sublime if available, otherwise use nano
