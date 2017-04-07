@@ -48,3 +48,4 @@ shiori \
 teamviewer \
 skype \
 firefox \
+disk-inventory-x \
