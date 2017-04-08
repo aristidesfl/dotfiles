@@ -40,7 +40,7 @@ if status --is-login
 
     # rbenv
     if type -q rbenv
-        . (rbenv init -|psub)
+        rbenv init - | source -
     end
 
 end
