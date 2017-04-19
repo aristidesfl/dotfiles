@@ -19,6 +19,7 @@ tig \
 certbot \
 switchaudio-osx \
 icdiff \
+exiftool \
 
 brew cask install \
 iterm2 \
