@@ -20,6 +20,7 @@ certbot \
 switchaudio-osx \
 icdiff \
 exiftool \
+tidy-html5 \
 
 brew cask install \
 iterm2 \
