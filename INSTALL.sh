@@ -37,6 +37,18 @@ done
 echo -e "$linkResults" | sed s:"$HOME":"~":g | column -t && echo
 
 
+# ------------------------------ rmate ------------------------------------
+[ -n "$SSH_CLIENT" ] && ! hash rmate 2>/dev/null && {
+
+    read -p "Do you want to install rmate to edit files remotely using Sublime Text?(y/n)"
+    [ "$REPLY" == "y" ] && {
+        echo "Installing rmate..."
+        echo ""
+        sudo wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+        sudo chmod a+x /usr/local/bin/rmate
+    }
+}
+
 # ------------------------------- Git -------------------------------------
 hash git 2>/dev/null && {
     read -p "Do you wish to configure git?(y/n) "
@@ -49,9 +61,14 @@ hash git 2>/dev/null && {
         # email
         read -p "Email: "
         [ "$REPLY" ] && git config -f "$gitlocal" user.email "$REPLY"
-        # make git wait for sublime text otherwise commit doesn't work
-        read -p "Do you want to edit commit messages using Sublime Text?(y/n)"
-        [ "$REPLY" == "y" ] && git config -f "$gitlocal" core.editor "subl -w -n --command toggle_side_bar"
+
+        if hash rmate 2>/dev/null; then
+            git config -f "$gitlocal" core.editor "rmate -w"
+        else
+            # make git wait for sublime text otherwise commit doesn't work
+            read -p "Do you want to edit commit messages using Sublime Text?(y/n)"
+            [ "$REPLY" == "y" ] && git config -f "$gitlocal" core.editor "subl -w -n --command toggle_side_bar"
+        fi
         # use keychain to retrieve passwords on repositories cloned via https
         [ "`uname`" == "Darwin" ] && git config -f "$gitlocal" credential.helper "osxkeychain"
         echo
