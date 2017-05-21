@@ -81,7 +81,9 @@ if status --is-interactive
     abbr revert "git revert"
     abbr fetch "git fetch"
     abbr amend "git commit --amend"
-    alias git "hub"
+    if type -q hub
+        alias git "hub"
+    end
 
     # ----- other aliases -----
     alias ll "ls -Alrth"
