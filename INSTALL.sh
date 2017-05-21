@@ -92,14 +92,16 @@ hash git 2>/dev/null && {
 if ! [[ -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
     echo ""
     echo "Installing fisherman..."
-    curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs git.io/fisher
+    curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs 'https://git.io/fisher'
 fi
 
 
-if [[ $SHELL = *fish* ]]; then
-    echo "For the changes to take effect you need to restart fish"
-    echo "Installing fisherman packages"
-    fisher install
+if hash fish 2>/dev/null; then
+    echo "Installing fisherman packages..." &&
+    fish --login --command="fisher install"
+    echo ""
+    echo "Entering fish..." &&
+    fish --login
 else
     if [[ `uname` == "Darwin" ]]; then
         if hash brew 2>/dev/null; then
