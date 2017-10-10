@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.gitignore
-	pager = cat
+	pager = ""
 [color]
 	diff = auto
 	status = auto
@@ -39,10 +39,10 @@
 	tool = Kaleidoscope
 [alias]
   aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
-	lg = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg = log --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=200
 	graph = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	find = log --diff-filter=A
-	report = !git log --author=\"`git config user.name`\" --format='%Cgreen%ci%Creset %s%Creset' --no-merges
+	report = !git log --author=\"`git config user.name`\" --format='%Cgreen%ci%Creset %s%Creset' --no-merges --reverse
 	prune = fetch --prune
 	stash-all = stash save --include-untracked
 [include]
