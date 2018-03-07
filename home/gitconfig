@@ -76,3 +76,6 @@
 	gpgsign = true
 [tag]
 	forceSignAnnotated = true
+
+[rerere]
+	enabled = true
