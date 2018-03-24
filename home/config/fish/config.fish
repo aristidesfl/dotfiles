@@ -45,6 +45,9 @@ if status --is-login
         rbenv init - | source -
     end
 
+    # use new key bindings of fzf
+    set -U FZF_LEGACY_KEYBINDINGS 0
+
 end
 
 if status --is-interactive
