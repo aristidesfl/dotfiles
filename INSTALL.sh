@@ -98,7 +98,7 @@ fi
 
 if hash fish 2>/dev/null; then
     echo "Installing fisherman packages..." &&
-    fish --login --command="fisher install"
+    fish --login --command="fisher"
     echo ""
     echo "Entering fish..." &&
     fish --login
