@@ -24,7 +24,7 @@ if status --is-login
     # set e to sublime if available, otherwise use rmate, nano
     if [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]
         set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
-        set -x EDITOR "subl --new-window --command toggle_full_screen"
+        set -x EDITOR "subl --new-window"
         set -x KUBE_EDITOR "subl --wait --new-window --command toggle_side_bar"
     else if type -q rmate
         set -x EDITOR "rmate"
