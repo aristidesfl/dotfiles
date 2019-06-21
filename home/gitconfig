@@ -74,8 +74,8 @@
 	showUntrackedFiles = all
 [commit]
 	gpgsign = true
+	cleanup = strip
 [tag]
 	forceSignAnnotated = true
-
 [rerere]
 	enabled = true
