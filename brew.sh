@@ -16,11 +16,11 @@ rbenv \
 tree \
 terminal-notifier \
 tig \
-certbot \
 switchaudio-osx \
 icdiff \
 exiftool \
-tidy-html5 \
+jq \
+yajl \
 
 brew cask install \
 iterm2 \
@@ -32,7 +32,6 @@ imageoptim \
 transmission \
 the-unarchiver \
 appcleaner \
-flux \
 sidestep \
 secure-pipes \
 cyberduck \
@@ -42,8 +41,6 @@ docker \
 dropbox \
 gitup \
 hex-fiend \
-licecap \
-livereload \
 openemu-experimental \
 postgres \
 shiori \
