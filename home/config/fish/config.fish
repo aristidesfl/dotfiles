@@ -4,25 +4,22 @@ if status --is-login
     set -x PATH $PATH .
 
     # add personal binaries to path
-    if [ -d $HOME/Dropbox/bin ]
+    if test -d "$HOME/Dropbox/bin"
         set -x PATH $PATH "$HOME/Dropbox/bin"
     end
 
     # add postgres.app to path if installed
-    if [ -d /Applications/Postgres.app/Contents/Versions/latest/bin ]
+    if test -d '/Applications/Postgres.app/Contents/Versions/latest/bin'
         set -x PATH $PATH "/Applications/Postgres.app/Contents/Versions/latest/bin"
     end
 
     # add coreutils gnubin if installed
-    set -l gnubin "/usr/local/opt/coreutils/libexec/gnubin"
-    set -l gnuman "/usr/local/opt/coreutils/libexec/gnuman"
-    if [ -d $gnubin ]
-        set -x PATH $gnubin $PATH
-        set -x MANPATH $gnuman $MANPATH
+    if test -d '/usr/local/opt/coreutils/libexec/gnubin'
+        set -x PATH '/usr/local/opt/coreutils/libexec/gnubin' $PATH
     end
 
     # set e to sublime if available, otherwise use rmate, nano
-    if [ -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ]
+    if test -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'
         set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
         set -x EDITOR "subl --new-window"
         set -x KUBE_EDITOR "subl --wait --new-window --command toggle_side_bar"
@@ -53,7 +50,7 @@ end
 if status --is-interactive
 
     # set launchbar alias if launchbar is installed
-    if [ -e '/Applications/Launchbar.app' ]
+    if test -e '/Applications/Launchbar.app'
         alias launchbar "open -a launchbar"
     end
 
