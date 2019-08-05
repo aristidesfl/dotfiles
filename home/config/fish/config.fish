@@ -58,48 +58,14 @@ if status --is-interactive
         alias launchbar "open -a launchbar"
     end
 
-    # reset abbreviations
-    set -g fish_user_abbreviations
-
-    # ----- git aliases -----
-    abbr g "git"
-    abbr s "git status"
-    abbr c "git commit"
-    abbr commit "git commit"
-    abbr changes "git diff"
-    abbr branch "git branch"
-    abbr add "git add"
-    abbr checkout "git checkout"
-    abbr log "git log"
-    abbr lg "git lg"
-    abbr merge "git merge"
-    abbr pull "git pull"
-    abbr push "git push"
-    abbr rebase "git rebase"
-    abbr reset "git reset"
-    abbr show "git show"
-    abbr tag "git tag"
-    abbr remove "git rm"
-    abbr move "git mv"
-    abbr stash "git stash"
-    abbr clone "git clone"
-    abbr remote "git remote"
-    abbr revert "git revert"
-    abbr fetch "git fetch"
-    abbr amend "git commit --amend"
+    # ----- other aliases -----
     if type -q hub
         alias git "hub"
     end
-
-    # ----- other aliases -----
-    alias ll "ls -Alrth"
-    # abbr venv "vex --path .virtualenv"
+    alias venv "vex --path .virtualenv"
     alias e $EDITOR
-    abbr mkdirs "mkdir -p"  # make intermediary directories
     alias hamachi "sudo '/Library/Application Support/LogMeIn Hamachi/bin/hamachid'"
     alias spaces2tabs "find . -type f -not -path \"./.git/*\" -not -path 'node_modules/*' -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 \"$0\" > /tmp/e && mv /tmp/e \"$0\"' {} \;"
-    abbr k "kubectl"
-    abbr pubkey "cat ~/.ssh/id_rsa.pub | pbcopy"
     alias npm-exec "env PATH=(npm bin):(string join ':' -- $PATH)"
 
     # function auto_activation --on-variable PWD
