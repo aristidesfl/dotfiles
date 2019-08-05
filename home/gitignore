@@ -64,6 +64,3 @@ bower_components/
 
 # Rails
 .byebug_history
-
-# vscode
-.vscode
