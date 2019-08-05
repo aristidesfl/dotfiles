@@ -79,14 +79,6 @@ hash git 2>/dev/null && {
 }
 
 
-# ------------------------------- OS X Preferencies -------------------------------------
-[ "`uname`" == "Darwin" ] && {
-    read -p "Do you wish to apply OS X preferenecies from osx.sh?(y/n) "
-    [ "$REPLY" == "y" ] && $repoDir/osx.sh
-    echo
-}
-
-
 # ------------------------------- install/activate homebrew/fishfish ------------------------------------------
 # install fisherman
 if ! [[ -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
