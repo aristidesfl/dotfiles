@@ -67,6 +67,8 @@ if status --is-interactive
     alias hamachi "sudo '/Library/Application Support/LogMeIn Hamachi/bin/hamachid'"
     alias spaces2tabs "find . -type f -not -path \"./.git/*\" -not -path 'node_modules/*' -exec grep -Iq '' {} \; -and -exec bash -c 'unexpand -t 2 \"$0\" > /tmp/e && mv /tmp/e \"$0\"' {} \;"
     alias npm-exec "env PATH=(npm bin):(string join ':' -- $PATH)"
+    # set tab width to 3 spaces instead of 8
+    tabs -3
 
     # function auto_activation --on-variable PWD
     #     if test -d ".virtualenv"
@@ -87,8 +89,4 @@ if status --is-interactive
     # end
     # # in case the shell is started in a directory which contains a virtualenv
     # auto_activation
-
-    # set tab width to 3 spaces instead of 8
-    tabs -3
-
 end
