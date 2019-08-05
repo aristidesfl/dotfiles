@@ -29,6 +29,10 @@ if status --is-login
         set -x EDITOR "nano"
     end
 
+    if test -e '/usr/libexec/java_home'
+        set -x JAVA_HOME (/usr/libexec/java_home)
+    end
+
     # improve ls colors on osx / bsd
     set -x LSCOLORS exfxbxdxcxegedxbxgxcac
 
