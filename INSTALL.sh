@@ -122,7 +122,7 @@ else
             echo "After that you can install fish with: brew install fish"
         fi
     else
-        echo "To install fishfish visit: http://ridiculousfish.com/shell/beta.html"
+        echo "To install fishfish visit: https://fishshell.com/"
         echo "To activate: sudo echo PATHTOFISH >> /etc/shells && sudo chsh -s PATHTOFISH"
     fi
 fi
