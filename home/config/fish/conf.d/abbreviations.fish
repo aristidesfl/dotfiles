@@ -1,7 +1,6 @@
 function abbreviations --on-event fish_prompt
   # reset abbreviations
   set -g fish_user_abbreviations
-  echo "setting abbreviations"
   # ----- git aliases -----
   abbr g "git"
   abbr s "git status"
