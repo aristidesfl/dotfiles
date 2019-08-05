@@ -1,7 +1,7 @@
 if status --is-login
 
-    # complete path
-    set -x PATH /usr/local/bin /usr/local/sbin $PATH .
+    # add current folder to path
+    set -x PATH $PATH .
 
     # add personal binaries to path
     if [ -d $HOME/Dropbox/bin ]
