@@ -80,41 +80,35 @@ hash git 2>/dev/null && {
 
 
 # ------------------------------- install/activate homebrew/fishfish ------------------------------------------
-# install fisherman
-if ! [[ -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
-    echo ""
-    echo "Installing fisherman..."
-    curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs 'https://git.io/fisher'
-fi
 
-
-if hash fish 2>/dev/null; then
-    echo "Installing fisherman packages..." &&
-    fish --login --command="fisher"
-    echo ""
-    echo "Entering fish..." &&
-    fish --login
-else
-    if [[ `uname` == "Darwin" ]]; then
-        if hash brew 2>/dev/null; then
-            echo ""
-            echo "Installing fish shell..."
-            brew install fish &&
-            echo ""
-            echo "Activating fish..." &&
-            sudo sh -c "echo /usr/local/bin/fish >> /etc/shells" && chsh -s /usr/local/bin/fish &&
-            echo ""
-            echo "Installing fisherman packages..." &&
-            fish --login --command="fisher install"
-            echo ""
-            echo "Entering fish..." &&
-            fish --login
-        else
-            echo "To install homebrew visit: https://github.com/mxcl/homebrew/wiki/Installation"
-            echo "After that you can install fish with: brew install fish"
-        fi
-    else
-        echo "To install fishfish visit: https://fishshell.com/"
-        echo "To activate: sudo echo PATHTOFISH >> /etc/shells && sudo chsh -s PATHTOFISH"
+if [[ `uname` == "Darwin" ]]; then
+    if not hash brew 2>/dev/null; then
+        echo ""
+        echo "Installing homebrew..."
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+
+    if not hash fish 2>/dev/null; then
+        echo ""
+        echo "Installing fish shell..."
+        brew install fish &&
+        echo ""
+        echo "Activating fish..."
+        sudo sh -c "echo /usr/local/bin/fish >> /etc/shells" && chsh -s /usr/local/bin/fish
+    fi
+
+    if ! [[ -f "$HOME/.config/fish/functions/fisher.fish" ]]; then
+        echo ""
+        echo "Installing fisherman..."
+        curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+        fish -c fisher
+    fi
+
+    echo ""
+    echo "Entering fish..."
+    fish --login
+
+else
+    echo "To install fish shell visit: https://fishshell.com/"
 fi
+
