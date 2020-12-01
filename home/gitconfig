@@ -1,6 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = ""
+	ignorecase = false
 [color]
 	diff = auto
 	status = auto
