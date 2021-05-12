@@ -89,3 +89,8 @@ if status --is-interactive
     # # in case the shell is started in a directory which contains a virtualenv
     # auto_activation
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/user/Downloads/google-cloud-sdk/path.fish.inc' ]
+    . '/Users/user/Downloads/google-cloud-sdk/path.fish.inc'
+end
