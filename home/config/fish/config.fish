@@ -3,6 +3,9 @@ if status --is-login
     # add current folder to path
     set -x PATH $PATH .
 
+    # add sbin to path
+    set -x PATH $PATH /usr/local/sbin
+
     # add personal binaries to path
     if test -d "$HOME/Dropbox/bin"
         set -x PATH $PATH "$HOME/Dropbox/bin"
