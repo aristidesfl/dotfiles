@@ -17,8 +17,8 @@ if status --is-login
     end
 
     # add coreutils gnubin if installed
-    if test -d '/usr/local/opt/coreutils/libexec/gnubin'
-        set -x PATH '/usr/local/opt/coreutils/libexec/gnubin' $PATH
+    if test -d /usr/local/opt/coreutils/libexec/gnubin
+        set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
     end
 
     # set e to sublime if available, otherwise use rmate, nano
@@ -27,9 +27,9 @@ if status --is-login
         set -x EDITOR "subl --new-window"
         set -x KUBE_EDITOR "subl --wait --new-window --command toggle_side_bar"
     else if type -q rmate
-        set -x EDITOR "rmate"
+        set -x EDITOR rmate
     else
-        set -x EDITOR "nano"
+        set -x EDITOR nano
     end
 
     # improve ls colors on osx / bsd
@@ -59,7 +59,7 @@ if status --is-interactive
 
     # ----- other aliases -----
     if type -q hub
-        alias git "hub"
+        alias git hub
     end
     alias venv "vex --path .virtualenv"
     alias e $EDITOR
