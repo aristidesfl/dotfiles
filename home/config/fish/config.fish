@@ -4,26 +4,26 @@ if status --is-login
     set -x PATH $PATH .
 
     # add homebrew to path
-    set -x PATH /opt/homebrew/bin/ $PATH
+    fish_add_path -g /opt/homebrew/bin/
 
     # add personal binaries to path
     if test -d "$HOME/Dropbox/bin"
-        set -x PATH $PATH "$HOME/Dropbox/bin"
+        fish_add_path -g "$HOME/Dropbox/bin"
     end
 
     # add postgres.app to path if installed
     if test -d '/Applications/Postgres.app/Contents/Versions/latest/bin'
-        set -x PATH $PATH "/Applications/Postgres.app/Contents/Versions/latest/bin"
+        fish_add_path -g "/Applications/Postgres.app/Contents/Versions/latest/bin"
     end
 
     # add coreutils gnubin if installed
     if test -d /usr/local/opt/coreutils/libexec/gnubin
-        set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+        fish_add_path -g /usr/local/opt/coreutils/libexec/gnubin
     end
 
     # set e to sublime if available, otherwise use rmate, nano
     if test -f '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'
-        set -x PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+        fish_add_path -g /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
         set -x EDITOR "subl --new-window"
         set -x KUBE_EDITOR "subl --wait --new-window --command toggle_side_bar"
     else if type -q rmate
